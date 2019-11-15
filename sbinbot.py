@@ -25,7 +25,7 @@ else:
         posts_replied_to = list(filter(None, posts_replied_to))
 
 # Get the top 5 values from our subreddit
-subreddit = reddit.subreddit('pythonforengineers')
+subreddit = reddit.subreddit('formuladank')
 for submission in subreddit.hot(limit=10):
     #print(submission.title)
 
@@ -36,8 +36,6 @@ for submission in subreddit.hot(limit=10):
         if re.search("s"+ '\U0001F171'+ "inalla", submission.title, re.IGNORECASE) or re.search("pronto", submission.title, re.IGNORECASE):
             # Reply to the post
             submission.reply("Pronto s" + '\U0001F171'+ "inalla!")
-            # print( "the : " + '\U0001F171')
-            print("Bot replying to : ", submission.title)
 
             # Store the current id into our list
             posts_replied_to.append(submission.id)
